@@ -21,12 +21,22 @@ class bahan_masakanApiController extends Controller
     }
     public function byBahan($id)
     {
-        $data = bahan_masakan::with('bahan','masakan')->where('id_bahan',$id)->get();
+        $data = bahan_masakan::with('masakan')->where('id_bahan',$id)->get();
         return response()->json(['data'=>$data]);
     }
     public function show($id)
     {
         $data = masakan::where('id_bahan',$id)->get();
+        return response()->json(['data'=>$data]);
+    }
+    public function bljr()
+    {
+        $data = array(
+          array("title" => "hello",
+          "description" => "test test test"),
+          array("title" => "hello2",
+          "description" => "test test test2")
+        );
         return response()->json(['data'=>$data]);
     }
 }

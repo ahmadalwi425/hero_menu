@@ -22,3 +22,5 @@ Route::get('bahan_masakan', [bahan_masakanApiController::class, 'index']);
 Route::get('bahan', [bahan_masakanApiController::class, 'bahan']);
 Route::get('byBahan/{id}', [bahan_masakanApiController::class, 'byBahan']);
 Route::get('byMasakan/{id}', [bahan_masakanApiController::class, 'show']);
+Route::get('bljr', [bahan_masakanApiController::class, 'bljr']);
+
