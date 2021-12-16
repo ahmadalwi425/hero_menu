@@ -1,0 +1,8 @@
+version: "3"
+services:
+  web:
+    image: alwi23/finalcc:latest
+    container_name: web
+    restart: unless-stopped
+    ports:
+      - 80:80
