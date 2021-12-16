@@ -1,6 +1,6 @@
 FROM php:7.4-apache
 
-WORKDIR /var/www/laravel
+WORKDIR /var/www/finalcc
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
@@ -32,7 +32,7 @@ RUN a2enmod rewrite headers \
     && a2dissite 000-default \
     && chmod +x /usr/local/bin/docker-laravel-entrypoint
 
-COPY . /var/www/laravel
+COPY . /var/www/finalcc
 RUN composer install --optimize-autoloader --no-dev
 
 CMD ["docker-laravel-entrypoint"]
