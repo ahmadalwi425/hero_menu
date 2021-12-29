@@ -19,7 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 Route::get('bahan_masakan', [bahan_masakanApiController::class, 'index']);
+Route::get('bahan_masakan/{nama}', [bahan_masakanApiController::class, 'masakanSearch']);
 Route::get('bahan', [bahan_masakanApiController::class, 'bahan']);
+Route::get('bahan/{nama}', [bahan_masakanApiController::class, 'bahanSearch']);
 Route::get('byBahan/{id}', [bahan_masakanApiController::class, 'byBahan']);
 Route::get('byMasakan/{id}', [bahan_masakanApiController::class, 'show']);
 Route::get('bljr', [bahan_masakanApiController::class, 'bljr']);

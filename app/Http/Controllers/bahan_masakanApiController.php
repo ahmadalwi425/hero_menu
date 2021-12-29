@@ -19,6 +19,16 @@ class bahan_masakanApiController extends Controller
         $data = bahan::get();
         return response()->json(['data'=>$data]);
     }
+    public function bahanSearch($nama)
+    {
+        $data = bahan::where('nama_bahan',$nama)->get();
+        return response()->json(['data'=>$data]);
+    }
+    public function masakanSearch($nama)
+    {
+        $data = masakan::where('nama_masakan', $nama)->get();
+        return response()->json(['data'=>$data]);
+    }
     public function byBahan($id)
     {
         $data = bahan_masakan::with('masakan')->where('id_bahan',$id)->get();
